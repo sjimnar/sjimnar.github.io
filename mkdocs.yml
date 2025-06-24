@@ -5,7 +5,7 @@ theme:
   logo: assets/images/logo.png
   features:
     - content.action.edit
-    - content.info
+    - blog.post.info
   palette: 
     - scheme: slate
       primary: black
@@ -27,7 +27,7 @@ plugins:
   - social
   - meta
   - blog:
-      blog_dir: blog/posts
+      blog_dir: blog/
 
 
 markdown_extensions:
@@ -38,9 +38,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Blog:
-      - blog/index.md
-      - blog/posts/s3-ransomware-batch-deletion.md
+  - Blog: blog/index.md
 
 extra:
   social:
