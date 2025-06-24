@@ -2,7 +2,8 @@
 
 {% block content %}
   {{ super() }}
-  {% if page.meta and page.meta.date and page.meta.date.created %}
+  <p>TEST OVERRIDE</p>
+  {% if page.meta and 'date' in page.meta and 'created' in page.meta.date %}
     <p class="md-content__meta">
       <small>
         Created: {{ page.meta.date.created }}
