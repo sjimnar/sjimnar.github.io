@@ -1,6 +1,6 @@
 # Blog
 
-![Logo](/assets/images/logo.png)
+
 
 ## Latest Posts
 
