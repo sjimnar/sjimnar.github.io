@@ -2,3 +2,7 @@ site_name: aws security blog
 site_url: https://sjiminar.github.io
 theme:
   name: material
+
+plugins:
+  - search
+  - blog
