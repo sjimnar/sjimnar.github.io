@@ -40,6 +40,10 @@ extra:
   social:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/sjnar/
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/RYwhuSXx
+    
+
   blog:
     post_date_format: '%Y-%m-%d'
 
