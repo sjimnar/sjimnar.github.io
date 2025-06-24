@@ -2,14 +2,13 @@ site_name: aws security blog
 site_url: https://sjiminar.github.io
 theme:
   name: material
-  palette:
+  palette: 
     - scheme: default
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-
     - scheme: slate
       primary: black
       accent: indigo
