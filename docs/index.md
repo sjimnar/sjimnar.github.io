@@ -1,17 +1,9 @@
-# Welcome to MkDocs
+# Welcome to AWS Security Blog
+
+This blog contains articles about security in AWS.
+
+## Latest Posts
+
+* [S3 Ransomware Batch Deletion Attack](aws.impact.s3-ransomware-batch-deletion-blog.md): Details the S3 ransomware batch deletion attack, a technique used to simulate ransomware activity in AWS S3 buckets.
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
