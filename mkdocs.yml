@@ -3,6 +3,8 @@ site_url: https://sjiminar.github.io
 theme:
   name: material
   logo: assets/images/logo.png
+  features:
+    - content.action.edit
   palette: 
     - scheme: slate
       primary: black
@@ -25,6 +27,7 @@ plugins:
   - meta
   - blog:
       blog_dir: blog/posts
+      show_post_date: true
 
 markdown_extensions:
   - attr_list
