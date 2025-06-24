@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+  {% if page.meta and page.meta.date and page.meta.date.created %}
+    <p class="md-content__meta">
+      <small>
+        Created: {{ page.meta.date.created }}
+      </small>
+    </p>
+  {% endif %}
+{% endblock %}
