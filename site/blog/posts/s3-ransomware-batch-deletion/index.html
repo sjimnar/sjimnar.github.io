@@ -397,6 +397,7 @@
 <li><strong>Versioning:</strong> Enable S3 versioning to keep a history of all object versions. While versioning allows you to recover from accidental or malicious deletions, it doesn't prevent the <code>DeleteObjects</code> API from removing all versions if the attacker has sufficient permissions.</li>
 <li><strong>MFA Delete:</strong> Require multi-factor authentication (MFA) for deleting object versions. This is a critical control, as it requires an additional layer of authentication to permanently delete objects, even with versioning enabled. Without MFA Delete, an attacker with sufficient permissions can bypass versioning by simply deleting all object versions.</li>
 <li><strong>Bucket Policies:</strong> Implement strict bucket policies to control access and restrict deletion permissions.</li>
+<li><strong>Source:</strong> This blog post was inspired by the following resource: https://stratus-red-team.cloud/attack-techniques/AWS/aws.impact.s3-ransomware-batch-deletion/</li>
 </ul>
 
 
