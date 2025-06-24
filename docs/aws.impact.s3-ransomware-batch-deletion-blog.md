@@ -2,11 +2,11 @@
 
 ## Introduction
 
-This blog post details the S3 ransomware batch deletion attack, a technique used to simulate ransomware activity in AWS S3 buckets. We'll explore how this attack works and discuss mitigation strategies to protect your data.
+As an AWS security consultant, I've observed the devastating effects of ransomware on AWS S3 buckets. A particularly effective technique employed by attackers involves leveraging the S3 `DeleteObjects` API for batch deletion. In this post, I'll share my insights on how this attack unfolds and, more importantly, what measures you can implement to safeguard your data.
 
 ## The Attack
 
-The S3 ransomware batch deletion attack simulates a ransomware scenario targeting an S3 bucket. It involves emptying an S3 bucket through batch deletion and then uploading a ransom note. This attack leverages the `DeleteObjects` API to remove multiple objects at once, making it efficient for large-scale deletion.
+The S3 ransomware attack targets an S3 bucket by emptying it through batch deletion and then uploading a ransom note. This attack leverages the `DeleteObjects` API to remove multiple objects and their versions at once, making it a highly efficient way to cause significant data loss.
 
 ### Detailed Steps
 
