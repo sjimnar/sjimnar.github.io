@@ -19,6 +19,10 @@ theme:
 
 plugins:
   - search
-  - blog:
-      blog_dir: "blog"
   - social
+
+nav:
+  - Home: index.md
+  - Blog: blog/index.md
+
+site_dir: site
