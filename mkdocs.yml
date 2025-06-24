@@ -38,7 +38,9 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Blog: blog/index.md
+  - Blog:
+      - blog/index.md
+      - blog/posts/s3-ransomware-batch-deletion.md
 
 extra:
   social:
