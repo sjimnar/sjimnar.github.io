@@ -14,8 +14,6 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="2025/06/24/s3-ransomware-batch-deletion-attack/">
-      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
@@ -281,50 +279,6 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Blog
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Blog
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-    
-      
-    
-  
-  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -389,108 +343,6 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="2025/06/24/s3-ransomware-batch-deletion-attack/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    S3 Ransomware Batch Deletion Attack
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Archive
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            Archive
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="archive/2025/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    2025
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
   </ul>
 </nav>
@@ -536,78 +388,37 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="blog">Blog</h1>
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="blog">Blog</h1>
 <h2 id="latest-posts">Latest Posts</h2>
 <ul>
-<li><a href="2025/06/24/s3-ransomware-batch-deletion-attack/">S3 Ransomware Batch Deletion Attack</a></li>
+<li><a href="posts/s3-ransomware-batch-deletion/">S3 Ransomware Batch Deletion Attack</a></li>
 </ul>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-06-24 00:00:00+00:00">June 24, 2025</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              2 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="s3-ransomware-batch-deletion-attack"><a class="toclink" href="2025/06/24/s3-ransomware-batch-deletion-attack/">S3 Ransomware Batch Deletion Attack</a></h2>
-<h3 id="introduction"><a class="toclink" href="2025/06/24/s3-ransomware-batch-deletion-attack/#introduction">Introduction</a></h3>
-<p>As an AWS security consultant, I've observed the devastating effects of ransomware on AWS S3 buckets. A particularly effective technique employed by attackers involves leveraging the S3 <code>DeleteObjects</code> API for batch deletion. In this post, I'll share my insights on how this attack unfolds and, more importantly, what measures you can implement to safeguard your data.</p>
-<h3 id="the-attack"><a class="toclink" href="2025/06/24/s3-ransomware-batch-deletion-attack/#the-attack">The Attack</a></h3>
-<p>The S3 ransomware attack targets an S3 bucket by emptying it through batch deletion and then uploading a ransom note. This attack leverages the <code>DeleteObjects</code> API to remove multiple objects and their versions at once, making it a highly efficient way to cause significant data loss.</p>
-<h4 id="detailed-steps"><a class="toclink" href="2025/06/24/s3-ransomware-batch-deletion-attack/#detailed-steps">Detailed Steps</a></h4>
-<ol>
-<li><strong>Listing Objects:</strong> The attack starts by listing all objects and their versions in the target S3 bucket using the <code>ListObjectVersions</code> API.</li>
-<li><strong>Batch Deletion:</strong> It then deletes all these objects in a single request using the S3 <code>DeleteObjects</code> API. This API can delete up to 1000 objects at a time.</li>
-<li>
-<p><strong>Ransom Note:</strong> Finally, the attack uploads a ransom note to the bucket, typically named <code>FILES-DELETED.txt</code>, informing the victim that their data has been "backed up" and providing contact information for negotiating its recovery. The content of the ransom note might look like this:</p>
-<div class="highlight"><pre><span></span><code>Your data is backed up in a safe location. To negotiate with us for recovery, get in touch with rick@astley.io. In 7 days, if we don&#39;t hear from you, that data will either be sold or published, and might no longer be recoverable.&#39;
-</code></pre></div>
-</li>
-</ol>
-<h3 id="mitigation-strategies"><a class="toclink" href="2025/06/24/s3-ransomware-batch-deletion-attack/#mitigation-strategies">Mitigation Strategies</a></h3>
-<p>To protect against this type of ransomware attack, consider the following mitigation strategies:</p>
-<ul>
-<li><strong>Monitoring and Alerting:</strong> Set up monitoring and alerting to detect unusual deletion patterns.</li>
-<li><strong>Versioning:</strong> Enable S3 versioning to keep a history of all object versions. While versioning allows you to recover from accidental or malicious deletions, it doesn't prevent the <code>DeleteObjects</code> API from removing all versions if the attacker has sufficient permissions.</li>
-<li><strong>MFA Delete:</strong> Require multi-factor authentication (MFA) for deleting object versions. This is a critical control, as it requires an additional layer of authentication to permanently delete objects, even with versioning enabled. Without MFA Delete, an attacker with sufficient permissions can bypass versioning by simply deleting all object versions.</li>
-<li><strong>Bucket Policies:</strong> Implement strict bucket policies to control access and restrict deletion permissions.</li>
-</ul>
-    
-  </div>
-</article>
-      
-      
-        
-          
 
 
 
-<nav class="md-pagination">
+
+
+
+
   
-</nav>
-        
-      
-    </div>
-  </div>
+  
 
+
+
+
+
+
+                
+              </article>
+            </div>
+          
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>

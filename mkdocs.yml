@@ -20,7 +20,8 @@ plugins:
   - search
   - social
   - meta
-  - blog
+  - blog:
+      blog_dir: blog/posts
 
 markdown_extensions:
   - attr_list
