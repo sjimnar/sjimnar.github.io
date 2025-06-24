@@ -1,6 +1,6 @@
 # Welcome to AWS Security Blog
 
-This blog contains articles about security in AWS.
+This blog is authored by Sergio Jiménez ([LinkedIn](https://www.linkedin.com/in/sjnar/)) and contains articles about security in AWS. This blog aims to analyze different techniques detailed in pages such as [Stratus Red Team](https://stratus-red-team.cloud/) and help with their dissemination and mitigation.
 
 ## Latest Posts
 
