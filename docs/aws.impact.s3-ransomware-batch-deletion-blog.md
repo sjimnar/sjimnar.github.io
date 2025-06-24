@@ -19,10 +19,11 @@ The S3 ransomware attack targets an S3 bucket by emptying it through batch delet
     ```
 
 ## Mitigation Strategies
-*   **Monitoring and Alerting:** Set up monitoring and alerting to detect unusual deletion patterns.
 
 To protect against this type of ransomware attack, consider the following mitigation strategies:
 
-*   **Versioning:** Enable S3 versioning to keep a history of all object versions.
-*   **MFA Delete:** Require multi-factor authentication for deleting object versions.
+*   **Monitoring and Alerting:** Set up monitoring and alerting to detect unusual deletion patterns.
+*   **Versioning:** Enable S3 versioning to keep a history of all object versions. While versioning allows you to recover from accidental or malicious deletions, it doesn't prevent the `DeleteObjects` API from removing all versions if the attacker has sufficient permissions.
+*   **MFA Delete:** Require multi-factor authentication (MFA) for deleting object versions. This is a critical control, as it requires an additional layer of authentication to permanently delete objects, even with versioning enabled. Without MFA Delete, an attacker with sufficient permissions can bypass versioning by simply deleting all object versions.
 *   **Bucket Policies:** Implement strict bucket policies to control access and restrict deletion permissions.
+*   **Source:** This blog post was inspired by the following resource: [https://stratus-red-team.cloud/attack-techniques/AWS/aws.impact.s3-ransomware-batch-deletion/](https://stratus-red-team.cloud/attack-techniques/AWS/aws.impact.s3-ransomware-batch-deletion/)
