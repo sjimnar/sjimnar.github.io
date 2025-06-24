@@ -2,7 +2,6 @@ site_name: aws security blog
 site_url: https://sjiminar.github.io
 theme:
   name: material
-  custom_dir: overrides
   palette: 
     - scheme: slate
       primary: black
