@@ -5,6 +5,7 @@ author: Sergio Jimenez
 tags:
   - aws
   - security
+  - ransomware
 ---
 
 # S3 Ransomware Batch Deletion Attack

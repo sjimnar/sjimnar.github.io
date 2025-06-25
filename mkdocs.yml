@@ -1,5 +1,5 @@
 site_name: aws! security blog
-site_url: https://sjiminar.github.io
+site_url: https://sjimnar.github.io
 theme:
   name: material
   logo: assets/images/logo.png
