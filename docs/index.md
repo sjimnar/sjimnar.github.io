@@ -8,3 +8,4 @@ Join our Discord community: [Discord](https://discord.gg/RYwhuSXx)
 ## Latest Posts
 
 * [S3 Ransomware Batch Deletion Attack](blog/posts/s3-ransomware-batch-deletion.md): Details the S3 ransomware batch deletion attack, a technique used to simulate ransomware activity in AWS S3 buckets.
+* [Defending S3: Anatomy and Countermeasures for Encryption and Deletion Attacks](blog/posts/s3-ransom-anatomy.md): Lately, we're seeing an attack pattern against Amazon S3 that is brutally simple and effective.
