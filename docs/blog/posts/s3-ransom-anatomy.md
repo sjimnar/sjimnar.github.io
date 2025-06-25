@@ -1,5 +1,5 @@
 ---
-title: Defending S3 - Anatomy and Countermeasures for Encryption and Deletion Attacks
+title: Defending S3 - Anatomy and Countermeasures for Encryption and Deletion Attacks (Codefinger ransomware)
 date: 2025-06-25
 author: Sergio Jimenez
 tags:
@@ -9,7 +9,7 @@ tags:
 ---
 
 
-# Defending S3: Anatomy and Countermeasures for Encryption and Deletion Attacks
+# Defending S3: Anatomy and Countermeasures for Encryption and Deletion Attacks (Codefinger ransomware)
 
 Lately, we're seeing an attack pattern against Amazon S3 that is brutally simple and effective. Attackers don't need a zero-day exploit in AWS. They just need one thing: a set of compromised AWS credentials. With that, they can either delete or hijack all your data.
 

@@ -2,3 +2,8 @@
 /* For example, if the date is hidden by default, you might try: */
 /* .md-content__extra { display: block !important; } */
 .md-content__meta { display: block !important; }
+
+/* Ensure the footer is visible to display copyright */
+.md-footer {
+  display: block !important;
+}

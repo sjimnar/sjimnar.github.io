@@ -10,6 +10,7 @@ theme:
     - navigation.expand
     - navigation.indexes
     - content.code.copy
+    - navigation.footer
   
   palette: 
     - scheme: slate
@@ -31,9 +32,9 @@ plugins:
   - search
   - social
   - meta
+  - awesome-pages
   - blog:
       blog_dir: blog/
-  - awesome-pages
 
 
 markdown_extensions:
@@ -60,6 +61,10 @@ nav:
   - Blog:
       - S3 Ransom Anatomy: blog/posts/s3-ransom-anatomy.md
       - S3 Ransomware Batch Deletion: blog/posts/s3-ransomware-batch-deletion.md
+  - About: about.md
+
+copyright: Copyright &copy; 2025 Sergio Jimenez. All rights reserved.
+
 
 extra:
   social:
@@ -67,8 +72,6 @@ extra:
       link: https://www.linkedin.com/in/sjnar/
     - icon: fontawesome/brands/discord
       link: https://discord.gg/RYwhuSXx
-
-    
 
   blog:
     post_date_format: '%Y-%m-%d'
