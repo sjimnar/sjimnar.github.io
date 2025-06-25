@@ -64,7 +64,7 @@ If you don't use a feature, disable it.
 
 * **Block SSE-C with Policies:** If your organization has no legitimate use case for Server-Side Encryption with Customer-Provided Keys (and most don't), forbid it. You can do this with a bucket policy or, more forcefully, with a Service Control Policy (SCP) in AWS Organizations that denies any API call containing the `x-amz-server-side-encryption-customer-algorithm` parameter.
 
-```json
+```json title="S3 Bucket Policy to Deny SSE-C"
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -81,3 +81,4 @@ If you don't use a feature, disable it.
     }
   ]
 }
+```
