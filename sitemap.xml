@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://sjimnar.github.io/site/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://sjimnar.github.io/site/blog/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://sjimnar.github.io/site/blog/2025/06/24/s3-ransomware-batch-deletion-attack/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+    <url>
+         <loc>https://sjimnar.github.io/site/blog/archive/2025/</loc>
+         <lastmod>2025-06-25</lastmod>
+    </url>
+</urlset>
