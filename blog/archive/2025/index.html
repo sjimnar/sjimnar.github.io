@@ -348,12 +348,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks/" class="md-nav__link">
+      <a href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Defending S3 - Anatomy and Countermeasures for Encryption and Deletion Attacks
+    Defending S3 - Anatomy and Countermeasures for Encryption and Deletion Attacks (Codefinger ransomware)
     
   </span>
   
@@ -390,6 +390,28 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -448,19 +470,19 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="defending-s3-anatomy-and-countermeasures-for-encryption-and-deletion-attacks"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks/">Defending S3: Anatomy and Countermeasures for Encryption and Deletion Attacks</a></h2>
+    <h2 id="defending-s3-anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/">Defending S3: Anatomy and Countermeasures for Encryption and Deletion Attacks (Codefinger ransomware)</a></h2>
 <p>Lately, we're seeing an attack pattern against Amazon S3 that is brutally simple and effective. Attackers don't need a zero-day exploit in AWS. They just need one thing: a set of compromised AWS credentials. With that, they can either delete or hijack all your data.</p>
 <p>In this post, we're going to break down the anatomy of two specific tactics gaining popularity and, more importantly, walk through the defense playbook to make sure it doesn't happen to you. Because under the shared responsibility model, whether your data in S3 is still there tomorrow depends on the defenses you implement today.</p>
-<h3 id="the-anatomy-of-the-attacks"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks/#the-anatomy-of-the-attacks">The Anatomy of the Attacks</a></h3>
+<h3 id="the-anatomy-of-the-attacks"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/#the-anatomy-of-the-attacks">The Anatomy of the Attacks</a></h3>
 <p>Both attacks start the same way: the attacker gets their hands on valid credentials with permissions over your buckets. From there, the path forks.</p>
-<h4 id="tactic-1-ransomware-via-batch-deletion"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks/#tactic-1-ransomware-via-batch-deletion">Tactic 1: Ransomware via Batch Deletion</a></h4>
+<h4 id="tactic-1-ransomware-via-batch-deletion"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/#tactic-1-ransomware-via-batch-deletion">Tactic 1: Ransomware via Batch Deletion</a></h4>
 <p>This is a scorched-earth attack. The goal is simple: wipe everything and leave a ransom note. It's fast and destructive.</p>
 <ol>
 <li><strong>Inventory:</strong> First, the attacker needs to know what to delete. They make a <code>ListObjectVersions</code> API call to get a complete list of every object and every version within the target bucket.</li>
 <li><strong>Annihilation:</strong> With the list in hand, they use the <code>DeleteObjects</code> API. This operation is terrifyingly efficient for malicious purposes, as it can delete up to 1,000 objects (and their versions) in a single request. A simple loop in a script can empty a bucket with millions of objects in a very short time.</li>
 <li><strong>The Note:</strong> Once the bucket is empty, the attacker uploads a file, typically named <code>FILES-DELETED.txt</code> or similar, containing the ransom message and payment instructions.</li>
 </ol>
-<h4 id="tactic-2-parasitic-encryption-with-sse-c"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks/#tactic-2-parasitic-encryption-with-sse-c">Tactic 2: Parasitic Encryption with SSE-C</a></h4>
+<h4 id="tactic-2-parasitic-encryption-with-sse-c"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/#tactic-2-parasitic-encryption-with-sse-c">Tactic 2: Parasitic Encryption with SSE-C</a></h4>
 <p>This technique is more subtle and insidious. The data isn't deleted; it's hijacked right under your nose, without a single byte ever leaving your AWS account.</p>
 <ol>
 <li><strong>Access:</strong> Again, the attacker has credentials with read and write permissions (<code>s3:GetObject</code>, <code>s3:PutObject</code>).</li>
@@ -469,23 +491,23 @@
 <li><strong>The Pressure:</strong> To finish the job, actors like the "Codefinger" group add a lifecycle policy that marks these encrypted objects for deletion in 7 days. The clock starts ticking.</li>
 </ol>
 <p>This attack is especially sneaky because many threat detection systems are configured to look for data exfiltration. There is none here; everything happens inside your perimeter.</p>
-<h3 id="the-defense-playbook-containment-strategies"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks/#the-defense-playbook-containment-strategies">The Defense Playbook: Containment Strategies</a></h3>
+<h3 id="the-defense-playbook-containment-strategies"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/#the-defense-playbook-containment-strategies">The Defense Playbook: Containment Strategies</a></h3>
 <p>Protecting yourself requires a defense-in-depth approach. There's no single silver bullet, but rather a set of barriers that makes a successful attack exponentially more difficult.</p>
-<h4 id="1-immutability-your-primary-line-of-defense"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks/#1-immutability-your-primary-line-of-defense">1. Immutability: Your Primary Line of Defense</a></h4>
+<h4 id="1-immutability-your-primary-line-of-defense"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/#1-immutability-your-primary-line-of-defense">1. Immutability: Your Primary Line of Defense</a></h4>
 <p>If an attacker can't delete or overwrite your data, their attack fails. This is non-negotiable.</p>
 <ul>
 <li><strong>Enable S3 Versioning:</strong> This is the prerequisite for everything else. It lets you preserve, retrieve, and restore every version of every object.</li>
 <li><strong>Implement S3 Object Lock in Compliance Mode:</strong> Versioning alone isn't enough if the attacker has permissions to delete versions. Object Lock in <code>Compliance</code> mode creates a WORM (Write-Once-Read-Many) safeguard. No one, not even the root user, can delete or modify a protected object version before its retention period expires. Set this on your critical buckets. <code>Governance</code> mode is useful for testing, but it can be disabled by privileged users.</li>
 <li><strong>Require MFA Delete:</strong> This is the final protective layer for versioning. It requires any attempt to delete an object version or change the bucket's versioning state to be authenticated with an MFA device. Without it, an attacker with the right credentials could simply disable versioning or delete the versions one by one.</li>
 </ul>
-<h4 id="2-abandon-long-lived-credentials"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks/#2-abandon-long-lived-credentials">2. Abandon Long-Lived Credentials</a></h4>
+<h4 id="2-abandon-long-lived-credentials"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/#2-abandon-long-lived-credentials">2. Abandon Long-Lived Credentials</a></h4>
 <p>The root cause of these attacks is almost always a compromised static access key. Stop using them.</p>
 <ul>
 <li><strong>Use IAM Roles:</strong> For any workload inside AWS (EC2, Lambda, etc.), use IAM Roles. They provide temporary credentials automatically, eliminating the risk of leaked static keys.</li>
 <li><strong>IAM Identity Center (SSO):</strong> For human access, centralize it with IAM Identity Center. It allows your developers and admins to fetch short-lived credentials for the CLI/SDK, protected by your identity provider and MFA.</li>
 <li><strong>IAM Roles Anywhere:</strong> If you have on-premises systems that need AWS access, this is the way. It lets your own servers obtain temporary AWS credentials using their existing identities (like X.509 certificates) without storing an IAM key on them.</li>
 </ul>
-<h4 id="3-block-unnecessary-attack-vectors"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks/#3-block-unnecessary-attack-vectors">3. Block Unnecessary Attack Vectors</a></h4>
+<h4 id="3-block-unnecessary-attack-vectors"><a class="toclink" href="../../2025/06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/#3-block-unnecessary-attack-vectors">3. Block Unnecessary Attack Vectors</a></h4>
 <p>If you don't use a feature, disable it.</p>
 <ul>
 <li><strong>Block SSE-C with Policies:</strong> If your organization has no legitimate use case for Server-Side Encryption with Customer-Provided Keys (and most don't), forbid it. You can do this with a bucket policy or, more forcefully, with a Service Control Policy (SCP) in AWS Organizations that denies any API call containing the <code>x-amz-server-side-encryption-customer-algorithm</code> parameter.</li>
@@ -582,9 +604,15 @@
       
         <footer class="md-footer">
   
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Sergio Jimenez. All rights reserved.
+    </div>
   
   
     Made with
@@ -632,7 +660,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.indexes", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.indexes", "content.code.copy", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
