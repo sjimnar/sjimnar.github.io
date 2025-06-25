@@ -7,3 +7,7 @@
 .md-footer {
   display: block !important;
 }
+
+.center-image {
+  text-align: center;
+}
