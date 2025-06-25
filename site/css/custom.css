@@ -1,4 +1,0 @@
-/* Add custom CSS here if needed to force date visibility */
-/* For example, if the date is hidden by default, you might try: */
-/* .md-content__extra { display: block !important; } */
-.md-content__meta { display: block !important; }
