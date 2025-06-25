@@ -59,6 +59,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Blog:
+      - IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets: blog/posts/s3-iam-access-analyzer.md
       - S3 Ransom Anatomy: blog/posts/s3-ransom-anatomy.md
       - S3 Ransomware Batch Deletion: blog/posts/s3-ransomware-batch-deletion.md
   - About: about.md
