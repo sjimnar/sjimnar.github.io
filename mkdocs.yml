@@ -72,6 +72,22 @@ extra:
       link: https://www.linkedin.com/in/sjnar/
     - icon: fontawesome/brands/discord
       link: https://discord.gg/RYwhuSXx
+  analytics: 
+    provider: google
+    property: 'G-Q0J7C5E72G'
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! 
 
   blog:
     post_date_format: '%Y-%m-%d'
