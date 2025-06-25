@@ -1,5 +1,8 @@
 site_name: aws! security blog
-site_url: https://sjimnar.github.io
+site_url: https://sjimnar.github.io/site
+site_description: A blog about AWS security
+site_author: Sergio Jimenez
+repo_url: https://github.com/sjimnar
 theme:
   name: material
   logo: assets/images/logo.png
