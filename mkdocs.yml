@@ -9,6 +9,7 @@ theme:
   features:
     - content.action.edit
     - blog.post.info
+    - blog.tags
   palette: 
     - scheme: slate
       primary: black
@@ -31,6 +32,7 @@ plugins:
   - meta
   - blog:
       blog_dir: blog/
+      tags_dir: tags/
 
 
 markdown_extensions:
@@ -38,10 +40,13 @@ markdown_extensions:
   - md_in_html
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.snippets
 
 nav:
   - Home: index.md
-  - Blog: blog/index.md
+  - Blog:
+      - S3 Ransom Anatomy: blog/posts/s3-ransom-anatomy.md
+      - S3 Ransomware Batch Deletion: blog/posts/s3-ransomware-batch-deletion.md
 
 extra:
   social:
@@ -53,5 +58,3 @@ extra:
 
   blog:
     post_date_format: '%Y-%m-%d'
-
-
