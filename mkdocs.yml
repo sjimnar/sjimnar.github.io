@@ -62,6 +62,7 @@ nav:
       - IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets: blog/posts/s3-iam-access-analyzer.md
       - S3 Ransom Anatomy: blog/posts/s3-ransom-anatomy.md
       - S3 Ransomware Batch Deletion: blog/posts/s3-ransomware-batch-deletion.md
+      - Stealthy Persistence in AWS - A Practical Simulation for Defenders: blog/posts/stealthy-persistence-lambda.md
   - About: about.md
 
 copyright: Copyright &copy; 2025 Sergio Jimenez. All rights reserved.
