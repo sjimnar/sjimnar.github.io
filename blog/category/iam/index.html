@@ -12,7 +12,7 @@
         <meta name="author" content="Sergio Jimenez">
       
       
-        <link rel="canonical" href="https://sjimnar.github.io/blog/category/aws-security/">
+        <link rel="canonical" href="https://sjimnar.github.io/blog/category/iam/">
       
       
       
@@ -22,7 +22,7 @@
     
     
       
-        <title>AWS Security - aws! security blog</title>
+        <title>IAM - aws! security blog</title>
       
     
     
@@ -67,11 +67,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="AWS Security - aws! security blog" >
+        <meta  property="og:title"  content="IAM - aws! security blog" >
       
         <meta  property="og:description"  content="A blog about AWS security" >
       
-        <meta  property="og:image"  content="https://sjimnar.github.io/assets/images/social/blog/category/aws-security.png" >
+        <meta  property="og:image"  content="https://sjimnar.github.io/assets/images/social/blog/category/iam.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -79,15 +79,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://sjimnar.github.io/blog/category/aws-security/" >
+        <meta  property="og:url"  content="https://sjimnar.github.io/blog/category/iam/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="AWS Security - aws! security blog" >
+        <meta  name="twitter:title"  content="IAM - aws! security blog" >
       
         <meta  name="twitter:description"  content="A blog about AWS security" >
       
-        <meta  name="twitter:image"  content="https://sjimnar.github.io/assets/images/social/blog/category/aws-security.png" >
+        <meta  name="twitter:image"  content="https://sjimnar.github.io/assets/images/social/blog/category/iam.png" >
       
     
     
@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws-security" class="md-skip">
+        <a href="#iam" class="md-skip">
           Skip to content
         </a>
       
@@ -145,7 +145,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AWS Security
+              IAM
             
           </span>
         </div>
@@ -344,6 +344,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -384,12 +388,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../aws-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    S3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="./" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    AWS Security
+    IAM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ransomware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ransomware
     
   </span>
   
@@ -505,17 +555,13 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="aws-security">AWS Security</h1>
+        <h1 id="iam">IAM</h1>
       </header>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
     
       <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="../../../assets/images/guillermo.jpg" alt="Guillermo Fernandez Cano">
-          </span>
         
           <span class="md-author">
             <img src="../../../assets/images/sergio.jpg" alt="Sergio Jimenez">
@@ -526,21 +572,19 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2025-07-11 00:00:00+00:00">July 11, 2025</time></li>
+          <time datetime="2025-06-25 00:00:00+00:00">June 25, 2025</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="./" class="md-meta__link">AWS Security</a>, 
-              <a href="../serverless---cloud-hacking/" class="md-meta__link">Serverless - Cloud Hacking</a>, 
-              <a href="../persistence/" class="md-meta__link">Persistence</a>, 
-              <a href="../lambda/" class="md-meta__link">Lambda</a></li>
+              <a href="./" class="md-meta__link">IAM</a>, 
+              <a href="../s3/" class="md-meta__link">S3</a></li>
         
         
           
           <li class="md-meta__item">
             
-              5 min read
+              3 min read
             
           </li>
         
@@ -549,14 +593,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="unmasking-lambdas-hidden-threat-when-your-bootstrap-becomes-a-backdoor"><a class="toclink" href="../../2025/07/11/unmasking-lambdas-hidden-threat---when-your-bootstrap-becomes-a-backdoor/">Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor</a></h2>
-<hr />
-<h3 id="unmasking-lambdas-hidden-threat-when-your-bootstrap-becomes-a-backdoor_1"><a class="toclink" href="../../2025/07/11/unmasking-lambdas-hidden-threat---when-your-bootstrap-becomes-a-backdoor/#unmasking-lambdas-hidden-threat-when-your-bootstrap-becomes-a-backdoor_1">Unmasking Lambda's Hidden Threat: When Your Bootstrap Becomes a Backdoor</a></h3>
-<p>So, you've jumped on the serverless bandwagon, huh? All that auto-scaling, no servers to patch, just pure code magic. It feels invincible, right? Well, sorry to burst your bubble, but even in the land of ephemeral functions, bad actors are finding ways to stick around longer than an awkward family dinner. Today, we're pulling back the curtain on one of those particularly sneaky tricks: achieving persistence in AWS Lambda by messing with its very heart – the custom runtime <code>bootstrap</code> file.</p>
+    <h2 id="iam-access-analyzer-a-cloud-guardian-for-your-s3-buckets"><a class="toclink" href="../../2025/06/25/iam-access-analyzer---a-cloud-guardian-for-your-s3-buckets/">IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets</a></h2>
+<p align="center">
+  <img src="/../assets/images/iam-access-analyzer.png" alt="IAM Access Analyzer" width="700"/>
+</p>
+
+<p>In the vast and ever-expanding AWS ecosystem, permission management is crucial. A simple misconfiguration in an S3 bucket policy can expose sensitive data, opening a backdoor for attackers. This is where IAM Access Analyzer steps in, acting as an unyielding sentinel to protect your resources by detecting unwanted external access.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2025/07/11/unmasking-lambdas-hidden-threat---when-your-bootstrap-becomes-a-backdoor/">
+        <a href="../../2025/06/25/iam-access-analyzer---a-cloud-guardian-for-your-s3-buckets/">
           Continue reading
         </a>
       </nav>
