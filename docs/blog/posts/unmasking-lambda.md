@@ -17,6 +17,9 @@ tags:
 ---
 
 -----
+<p align="center">
+  <img src="/../assets/images/bootstrap.png" alt="Lambda Bootstrap" width="700"/>
+</p>
 
 
 So, you've jumped on the serverless bandwagon, huh? All that auto-scaling, no servers to patch, just pure code magic. It feels invincible, right? Well, sorry to burst your bubble, but even in the land of ephemeral functions, bad actors are finding ways to stick around longer than an awkward family dinner. Today, we're pulling back the curtain on one of those particularly sneaky tricks: achieving persistence in AWS Lambda by messing with its very heart – the custom runtime `bootstrap` file.
