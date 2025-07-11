@@ -2,21 +2,25 @@
 title: Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor
 date: 2025-07-11
 authors:
-  - guillermogonzalez
+  - guillermofernandezcano
   - sergiojimenez
 categories:
-  - AWS Security
-  - Serverless
-    - Cloud Hacking
-  - Persistence
   - Lambda
+  - Persistence
+tags:
+  - backdoor
+  - persistence
+  - lambda 
+  - bootstrap
+  - runtime
+  - webhook
 ---
 
 -----
-## Unmasking Lambda's Hidden Threat: When Your Bootstrap Becomes a Backdoor
+
 
 So, you've jumped on the serverless bandwagon, huh? All that auto-scaling, no servers to patch, just pure code magic. It feels invincible, right? Well, sorry to burst your bubble, but even in the land of ephemeral functions, bad actors are finding ways to stick around longer than an awkward family dinner. Today, we're pulling back the curtain on one of those particularly sneaky tricks: achieving persistence in AWS Lambda by messing with its very heart – the custom runtime `bootstrap` file.
-
+<!-- more -->
 ### Why the Bootstrap? Understanding the Context
 
 AWS Lambda allows developers to use custom runtimes. This is made possible by the **Lambda Runtime API** and a key executable: the `bootstrap` file. When a Lambda function with a custom runtime is invoked, AWS calls this `bootstrap` file. Its purpose is to initialize the runtime environment, load the function's code and manage the lifecycle of invocations, directly interacting with the Runtime API to send and receive events.

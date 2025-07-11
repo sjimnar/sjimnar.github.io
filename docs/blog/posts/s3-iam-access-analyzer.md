@@ -3,6 +3,9 @@ title: IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets
 date: 2025-06-25
 authors:
   - sergiojimenez
+categories:
+  - IAM
+  - S3
 tags:
   - aws
   - security
@@ -14,6 +17,8 @@ tags:
 </p>
 
 In the vast and ever-expanding AWS ecosystem, permission management is crucial. A simple misconfiguration in an S3 bucket policy can expose sensitive data, opening a backdoor for attackers. This is where IAM Access Analyzer steps in, acting as an unyielding sentinel to protect your resources by detecting unwanted external access.
+
+<!-- more -->
 
 ## Why IAM Access Analyzer is Crucial for S3
 

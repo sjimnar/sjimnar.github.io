@@ -34,8 +34,13 @@ plugins:
   - meta
   - blog:
       blog_dir: blog/
-      authors_profiles: true
-
+      #authors_profiles: true
+      post_excerpt: required  # Solo muestra excerpt, no post completo
+      post_excerpt_max_authors: 2
+      post_url_format: "{date}/{slug}"
+      pagination_per_page: 5
+      
+      
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -57,12 +62,19 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Blog:
-      - IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets: blog/posts/s3-iam-access-analyzer.md
-      - S3 Ransom Anatomy: blog/posts/s3-ransom-anatomy.md
-      - S3 Ransomware Batch Deletion: blog/posts/s3-ransomware-batch-deletion.md
-      - Stealthy Persistence in AWS - A Practical Simulation for Defenders: blog/posts/stealthy-persistence-lambda.md
-      - Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor: blog/posts/unmasking-lambda.md
+  - Blog: blog/index.md
+  # - Blog:
+      # - IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets: blog/posts/s3-iam-access-analyzer.md
+      # - S3 Ransom Anatomy: blog/posts/s3-ransom-anatomy.md
+      # - S3 Ransomware Batch Deletion: blog/posts/s3-ransomware-batch-deletion.md
+      # - Stealthy Persistence in AWS - A Practical Simulation for Defenders: blog/posts/stealthy-persistence-lambda.md
+      # - Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor: blog/posts/unmasking-lambda.md
+  - Categories:
+      - S3: blog/category/s3/
+      - IAM: blog/category/iam/
+      - Ransomware: blog/category/ransomware/
+      - Lambda: blog/category/lambda/ 
+      - Persistence: blog/category/persistence/
   - About: about.md
 
 copyright: Copyright &copy; 2025 Sergio Jimenez. All rights reserved.

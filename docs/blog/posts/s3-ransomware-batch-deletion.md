@@ -3,17 +3,21 @@ title: S3 Ransomware Batch Deletion Attack
 date: 2025-06-24
 authors:
   - sergiojimenez
+categories:
+  - Ransomware
+  - S3
 tags:
   - aws
   - security
   - ransomware
 ---
 
-# S3 Ransomware Batch Deletion Attack
 
 ## Introduction
 
 As an AWS security consultant, I've observed the devastating effects of ransomware on AWS S3 buckets. A particularly effective technique employed by attackers involves leveraging the S3 `DeleteObjects` API for batch deletion. In this post, I'll share my insights on how this attack unfolds and, more importantly, what measures you can implement to safeguard your data.
+
+<!-- more -->
 
 ## The Attack
 

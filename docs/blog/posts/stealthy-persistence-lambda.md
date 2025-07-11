@@ -3,6 +3,9 @@ title: Stealthy Persistence in AWS - A Practical Simulation for Defenders
 date: 2025-06-27
 authors:
   - sergiojimenez
+categories:
+  - lambda
+  - Persistence
 tags:
   - backdoor
   - persistence
@@ -11,12 +14,11 @@ tags:
 
 -----
 
-## Stealthy Persistence in AWS: A Practical Simulation for Defenders
 
 In the world of cloud cybersecurity, attackers are always innovating. As defenders, it's crucial not only to understand attack techniques but also to **simulate them to strengthen our own defenses**. Recently, an analysis from Datadog and insights from a security analyst Eduard Agavriloae  shed light on a particularly cunning persistence technique in AWS: the use of **API Gateway and Lambda Functions for credential exfiltration**, with a "twist" that makes it even harder to detect.
 
 This article breaks down how an attacker might implement this technique and, more importantly, **how we can simulate it in our own environment** to fine-tune our detection and prevention capabilities.
-
+<!-- more -->
 -----
 
 ### The Technique in Detail: API Gateway + Lambda for Credential Exfiltration
