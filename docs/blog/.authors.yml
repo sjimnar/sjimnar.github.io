@@ -1,0 +1,12 @@
+authors:
+  sergiojimenez:
+    name: Sergio Jimenez
+    avatar: assets/images/sergio.jpg
+    description: Security Engineer and AWS enthusiast.
+    url: https://www.linkedin.com/in/sjnar/
+
+  guillermogonzalez:
+    name: Guillermo Gonzalez
+    avatar: assets/images/guillermo.jpg
+    description: Cloud Security Engineer and AWS enthusiast.
+    url: https://www.linkedin.com/in/gfernandezcano/

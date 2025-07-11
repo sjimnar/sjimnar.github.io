@@ -32,10 +32,9 @@ plugins:
   - search
   - social
   - meta
-  - awesome-pages
   - blog:
       blog_dir: blog/
-
+      authors_profiles: true
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -63,10 +62,10 @@ nav:
       - S3 Ransom Anatomy: blog/posts/s3-ransom-anatomy.md
       - S3 Ransomware Batch Deletion: blog/posts/s3-ransomware-batch-deletion.md
       - Stealthy Persistence in AWS - A Practical Simulation for Defenders: blog/posts/stealthy-persistence-lambda.md
+      - Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor: blog/posts/unmasking-lambda.md
   - About: about.md
 
 copyright: Copyright &copy; 2025 Sergio Jimenez. All rights reserved.
-
 
 extra:
   social:
@@ -90,6 +89,6 @@ extra:
           data: 0
           note: >- 
             Thanks for your feedback! 
-
   blog:
     post_date_format: '%Y-%m-%d'
+
