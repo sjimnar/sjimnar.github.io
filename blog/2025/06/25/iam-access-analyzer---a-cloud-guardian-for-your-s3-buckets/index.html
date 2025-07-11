@@ -523,6 +523,8 @@
 </p>
 
 <p>In the vast and ever-expanding AWS ecosystem, permission management is crucial. A simple misconfiguration in an S3 bucket policy can expose sensitive data, opening a backdoor for attackers. This is where IAM Access Analyzer steps in, acting as an unyielding sentinel to protect your resources by detecting unwanted external access.</p>
+<!-- more -->
+
 <h2 id="why-iam-access-analyzer-is-crucial-for-s3">Why IAM Access Analyzer is Crucial for S3</h2>
 <p>Imagine you've set up an S3 bucket to store critical information. Unbeknownst to you, a poorly configured policy could grant access to an external AWS account or, worse yet, make the bucket publicly accessible. While GuardDuty excels at detecting attack patterns and anomalous activities, and CloudTrail logs all actions, IAM Access Analyzer specializes in the proactive detection of risky policy configurations.</p>
 <p>For instance, GuardDuty might not alert you about a policy granting access to a specific AWS account (as it's not "anonymous" or "public" access in the strict sense that GuardDuty looks for with certain detections). However, Access Analyzer will. Its primary goal is to identify resources accessible from outside your "zone of trust," which includes AWS accounts external to your organization.</p>

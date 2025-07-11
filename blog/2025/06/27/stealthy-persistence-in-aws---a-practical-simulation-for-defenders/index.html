@@ -602,6 +602,7 @@
 <h2 id="stealthy-persistence-in-aws-a-practical-simulation-for-defenders">Stealthy Persistence in AWS: A Practical Simulation for Defenders</h2>
 <p>In the world of cloud cybersecurity, attackers are always innovating. As defenders, it's crucial not only to understand attack techniques but also to <strong>simulate them to strengthen our own defenses</strong>. Recently, an analysis from Datadog and insights from a security analyst Eduard Agavriloae  shed light on a particularly cunning persistence technique in AWS: the use of <strong>API Gateway and Lambda Functions for credential exfiltration</strong>, with a "twist" that makes it even harder to detect.</p>
 <p>This article breaks down how an attacker might implement this technique and, more importantly, <strong>how we can simulate it in our own environment</strong> to fine-tune our detection and prevention capabilities.</p>
+<!-- more -->
 <hr />
 <h3 id="the-technique-in-detail-api-gateway-lambda-for-credential-exfiltration">The Technique in Detail: API Gateway + Lambda for Credential Exfiltration</h3>
 <p>Datadog's original idea involved a compromised Lambda creating new IAM users for persistence. However, the "twist" that interests us is the <strong>exfiltration of credentials from the Lambda's own execution environment (<code>/proc/self/environ</code>)</strong>. This is stealthier because an attacker can use these exfiltrated credentials to operate from their own infrastructure, avoiding detections associated with creating new users (a highly monitored API call).</p>
