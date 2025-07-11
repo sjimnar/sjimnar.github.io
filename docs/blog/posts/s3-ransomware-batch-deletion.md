@@ -1,7 +1,8 @@
 ---
 title: S3 Ransomware Batch Deletion Attack
 date: 2025-06-24
-author: Sergio Jimenez
+authors:
+  - sergiojimenez
 tags:
   - aws
   - security

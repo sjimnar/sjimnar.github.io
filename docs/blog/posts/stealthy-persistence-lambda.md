@@ -1,7 +1,8 @@
 ---
 title: Stealthy Persistence in AWS - A Practical Simulation for Defenders
 date: 2025-06-27
-author: Sergio Jimenez
+authors:
+  - sergiojimenez
 tags:
   - backdoor
   - persistence

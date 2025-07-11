@@ -1,7 +1,8 @@
 ---
 title: IAM Access Analyzer - A Cloud Guardian for Your S3 Buckets
 date: 2025-06-25
-author: Sergio Jimenez
+authors:
+  - sergiojimenez
 tags:
   - aws
   - security

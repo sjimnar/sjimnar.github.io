@@ -1,7 +1,8 @@
 ---
 title: Defending S3 - Anatomy and Countermeasures for Encryption and Deletion Attacks (Codefinger ransomware)
 date: 2025-06-25
-author: Sergio Jimenez
+authors:
+  - sergiojimenez
 tags:
   - aws
   - security
