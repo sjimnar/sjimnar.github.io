@@ -2,8 +2,8 @@
 title: Unmasking Lambda's Hidden Threat - When Your Bootstrap Becomes a Backdoor
 date: 2025-07-11
 authors:
-  - sergiojimenez
   - guillermogonzalez
+  - sergiojimenez
 categories:
   - AWS Security
   - Serverless
