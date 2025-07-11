@@ -16,6 +16,12 @@ Official AWS security blog with the latest security announcements, best practice
 ### ⚡ [Stratus Red Team](https://stratus-red-team.cloud/)
 Stratus Red Team is "Atomic Red Team" for the cloud, allowing to emulate offensive attack techniques in a granular and self-contained manner.
 
+### 🌩️ [Hacking the Cloud](https://hackingthe.cloud/)
+Created by Nick Frichette, this comprehensive encyclopedia covers cloud security exploitation techniques, defensive strategies, and research across major cloud providers.
+
+### 🎓 [CloudBreach](https://cloudbreach.io/)
+Specialized platform offering cloud security certifications and training programs to advance your expertise in securing cloud environments.
+
 ---
 
 ## Contribute

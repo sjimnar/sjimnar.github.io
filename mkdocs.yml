@@ -1,6 +1,6 @@
-site_name: aws! security blog
+site_name: Ouch! Cloud Security Blog
 site_url: https://sjimnar.github.io/
-site_description: A blog about AWS security
+site_description: Ouch! Cloud Security Blog - A blog about AWS security
 site_author: Sergio Jimenez
 repo_url: https://github.com/sjimnar
 theme:
